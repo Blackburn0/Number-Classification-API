@@ -27,7 +27,7 @@ The **Number Classification API** is a RESTful service that classifies a given n
 ## API Specification
 ### Endpoint:
 ```
-GET <your-domain.com>/api/classify-number?number=<number>
+GET https://number-classification-api-kappa.vercel.app/api/classify-number?number=371
 ```
 
 ### Request Parameters:
@@ -60,7 +60,7 @@ GET <your-domain.com>/api/classify-number?number=<number>
 
 ### Clone the Repository
 ```bash
-git clone <repository-url>
+git clone https://github.com/Blackburn0/Number-Classification-API.git
 cd number-classification-api
 ```
 
@@ -82,40 +82,9 @@ python manage.py runserver
 ### Testing Locally
 Access the API via:
 ```
-http://127.0.0.1:8000/api/classify-number?number=371
+https://number-classification-api-kappa.vercel.app/api/classify-number?number=371
 ```
 
 ## Deployment
-The API is deployed on **Railway**. To deploy:
-1. Push your code to GitHub.
-2. Link your GitHub repository to Railway.
-3. Configure environment settings.
-4. Deploy and obtain a public endpoint.
-
-## Version Control
-- The project is hosted on a **public GitHub repository**.
-- Includes a well-structured README.
-- Uses Git for version control.
-
-## Testing and Validation
-Ensure the API meets all specifications before submission:
-- ✅ Hosted on a publicly accessible platform
-- ✅ Handles CORS
-- ✅ Returns JSON responses
-- ✅ Accepts valid integers only
-- ✅ Implements proper error handling
-- ✅ Thoroughly tested
-
-## Submission Checklist
-- [ ] Hosted API on a platform
-- [ ] Double-checked all requirements
-- [ ] Thoroughly tested the API
-- [ ] Submitted via the designated form
-
-## License
-This project is open-source and available under the MIT License.
-
----
-
-For any questions or contributions, feel free to open an issue or create a pull request on GitHub!
+The API is deployed on **Vercel**.
 
