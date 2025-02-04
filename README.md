@@ -53,9 +53,6 @@ GET https://number-classification-api-kappa.vercel.app/api/classify-number?numbe
 ```
 
 ## Installation and Setup
-### Prerequisites
-- Python 3.x installed
-- Django and required dependencies installed
 
 ### Clone the Repository
 ```bash
