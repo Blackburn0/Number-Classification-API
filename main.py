@@ -1,4 +1,4 @@
-from fastapi import FastAPI, Query
+from fastapi import FastAPI, Query, HTTPException
 import httpx
 import math
 
@@ -18,18 +18,21 @@ app.add_middleware(
 NUMBERS_API_URL = "http://numbersapi.com/{}?json"
 
 def is_armstrong(n: int) -> bool:
-    """Check if a number is an Armstrong number."""
+    """Check if a number is an Armstrong number (using absolute value)."""
+    n = abs(n)  # Handle negative numbers
     digits = [int(digit) for digit in str(n)]
     power = len(digits)
     return sum(d ** power for d in digits) == n
 
 def is_perfect(n: int) -> bool:
     """Check if a number is a Perfect number."""
+    if n <= 0:
+        return False  # Perfect numbers are positive
     return sum(i for i in range(1, n) if n % i == 0) == n
 
 @app.get("/api/classify-number")
 async def classify_number(number: int = Query(..., description="The number to classify")):
-    """Classifies a number based on mathematical properties."""
+    """Classifies a number based on mathematical properties, supporting negative numbers."""
     try:
         # Check properties
         armstrong = is_armstrong(number)
@@ -53,12 +56,9 @@ async def classify_number(number: int = Query(..., description="The number to cl
             "is_prime": is_prime,
             "is_perfect": perfect,
             "properties": properties,
-            "digit_sum": sum(int(d) for d in str(number)),
+            "digit_sum": sum(int(d) for d in str(abs(number))),
             "fun_fact": fun_fact
         }
-
-    except:
-        return {
-            "number": "alphabet",
-            "error": True
-        }
+    
+    except ValueError:
+        raise HTTPException(status_code=400, detail={"number": "alphabet", "error": True})
