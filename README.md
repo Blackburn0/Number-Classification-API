@@ -18,9 +18,8 @@ The **Number Classification API** is a RESTful service that classifies a given n
 - Implements CORS handling.
 
 ## Technology Stack
-- **Backend**: Django REST Framework (Python)
+- **Backend**: Fast API (Python)
 - **External API**: Numbers API (http://numbersapi.com/)
-- **Database**: SQLite (for local development)
 - **Deployment**: vercel
 - **Version Control**: Git & GitHub
 
