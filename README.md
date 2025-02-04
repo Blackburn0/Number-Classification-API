@@ -64,23 +64,3 @@ cd number-classification-api
 ```bash
 pip install -r requirements.txt
 ```
-
-### Run Migrations
-```bash
-python manage.py migrate
-```
-
-### Start the Server
-```bash
-python manage.py runserver
-```
-
-### Testing Locally
-Access the API via:
-```
-https://number-classification-api-kappa.vercel.app/api/classify-number?number=371
-```
-
-## Deployment
-The API is deployed on **Vercel**.
-
