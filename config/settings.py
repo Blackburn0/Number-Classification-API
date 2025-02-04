@@ -23,9 +23,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-%4!g2l2-m-@)i^pztc^!frapmhri!4qq44x8+41=##!3bq3ohb'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['https://number-classification-api-lemon.vercel.app']
 
 
 # Application definition
